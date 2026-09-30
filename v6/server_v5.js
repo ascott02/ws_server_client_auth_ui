@@ -148,6 +148,6 @@ wss.on("connection", (ws, req) => {
 
 init().then(() =>
   server.listen(PORT, () =>
-    console.log("Emoji Party v6 listening on :${PORT}")
+    console.log(`Emoji Party v6 listening on :${PORT}`)
   )
 );
