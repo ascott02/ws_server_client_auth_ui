@@ -15,6 +15,7 @@ const db = new Pool({
 
 const DEBUG = process.argv.includes("--debug");
 const WIDTH = 32, HEIGHT = 32;
+const PORT = process.env.PORT || 3000;
 
 const sessions = new Map();   // token -> user
 const players = new Map();    // user id -> player
@@ -146,7 +147,7 @@ wss.on("connection", (ws, req) => {
 });
 
 init().then(() =>
-  server.listen(3000, () =>
-    console.log("Emoji Party v5 listening on :3000")
+  server.listen(PORT, () =>
+    console.log("Emoji Party v6 listening on :${PORT}")
   )
 );
